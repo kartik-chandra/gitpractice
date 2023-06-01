@@ -12,3 +12,7 @@ const stat = [
 
 const allrounder = stat.filter(x=> (x.run > 10000 && x.wicket >= 100));
 console.log(allrounder);
+
+const playersRun = stat.map(x=> {x.id, x.name, x.run});
+console.run(playersRun);
+

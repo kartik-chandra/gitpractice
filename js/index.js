@@ -15,3 +15,7 @@ console.log(allrounder);
 
 const playersRun = stat.map((x)=> { return {id: x.id, name: x.name, run: x.run}});
 console.log(playersRun);
+
+console.log(playersRun.shift());
+console.log(playersRun);
+

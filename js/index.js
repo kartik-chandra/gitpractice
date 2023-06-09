@@ -1,3 +1,5 @@
+//import KcbInputError from './kcbInputError.js';
+
 console.log("This is the beginning!");
 console.log("LiveServer is enabled!");
 
@@ -42,4 +44,29 @@ const spApps = apps.find((x)=> x.dev == 175);
 console.log(spApps);
 
 console.log("Way of showing property : " + apps[0]["name"]);
+
+class KcbInputError extends Error {
+    constructor(input, value, ...params){
+        super(...params);
+
+        if(Error.captureStackTrace){
+            Error.captureStackTrace(this, KcbInputError)
+        };
+
+        this.name = "KcbInputError";
+        this.input = input;
+        this.value = value;
+        
+        this.message = `${value} is required!`;
+    }
+}
+
+
+try{
+    throw new KcbInputError("input", "value");
+}
+catch(err){
+    console.log(err)
+    throw new Error(err);
+}
 

@@ -1,5 +1,3 @@
-//import KcbInputError from './kcbInputError.js';
-
 console.log("This is the beginning!");
 console.log("LiveServer is enabled!");
 
@@ -66,7 +64,12 @@ try{
     throw new KcbInputError("input", "value");
 }
 catch(err){
-    console.log(err)
-    throw new Error(err);
+    console.log("Name: " + err.name + " | Message: " + err.message + " | Stack : " + err.stack);
 }
 
+
+//Some practices
+const numberArray = [1, 2, 3];
+const [y, z] = numberArray;
+console.log(y);
+console.log(z);
